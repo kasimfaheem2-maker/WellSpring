@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>WellSpring — BMI Calculator</title>
+  <!-- for-mobile-apps -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <!-- OG (optional) -->
+  <meta property="og:title" content="BMI Calculator — WellSpring" />
+  <meta property="og:type" content="website" />
+  <!-- Theme assets (match index) -->
+  <link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+  <link href="css/style.css" rel="stylesheet" type="text/css" />
+  <link href="css/font-awesome.css" rel="stylesheet">
+  <link href='//fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+  <link href='//fonts.googleapis.com/css?family=Noto+Sans:400,700' rel='stylesheet' type='text/css'>
+  <!-- jQuery first (match index) -->
+  <script src="js/jquery-1.11.1.min.js"></script>
+  <!-- Optional smooth scrolling libs you already use -->
+  <script type="text/javascript" src="js/move-top.js"></script>
+  <script type="text/javascript" src="js/easing.js"></script>
+
+  <!-- Page-only trim styles so it looks neat inside your theme -->
+  <style>
+    .page-hero {background:#f7fbff; border:1px solid #e6eef6; padding:20px; margin:20px 0}
+    .breadcrumb-wrap {margin:15px 0}
+    .panel-bmi .panel-heading {background:#0ea5e9; color:#fff}
+    .help-block-small {color:#6b6b6b; font-size:12px; margin-top:4px}
+    .bmi-result {font-size:16px}
+    .bmi-result .label {font-size:90%}
+    @media (max-width: 767px){ .page-hero{margin-top:5px} }
+  </style>
+</head>
+<body>
+  <!-- Top ribbon image (matches index) -->
+  <a href="offer.html"><img src="images/download.png" class="img-head" alt=""></a>
+
+  <!-- Header (copied from index, with BMI active) -->
+  <div class="header">
+    <div class="container">
+      <div class="logo">
+        <h1><a href="index.html">WellSpring</a></h1>
+      </div>
+
+      <div class="head-t">
+        <ul class="card">
+          <li><a href="wishlist.html"><i class="fa fa-heart" aria-hidden="true"></i>Wishlist</a></li>
+          <li><a href="login.html"><i class="fa fa-user" aria-hidden="true"></i>Login</a></li>
+          <li><a href="register.html"><i class="fa fa-arrow-right" aria-hidden="true"></i>Register</a></li>
+          <li><a href="about.html"><i class="fa fa-file-text-o" aria-hidden="true"></i>About Us</a></li>
+          <li><a href="shipping.html"><i class="fa fa-ship" aria-hidden="true"></i>Shipping</a></li>
+        </ul>
+      </div>
+
+      <div class="header-ri">
+        <ul class="social-top">
+          <li><a href="#" class="icon facebook"><i class="fa fa-facebook" aria-hidden="true"></i><span></span></a></li>
+          <li><a href="#" class="icon twitter"><i class="fa fa-twitter" aria-hidden="true"></i><span></span></a></li>
+          <li><a href="#" class="icon pinterest"><i class="fa fa-pinterest-p" aria-hidden="true"></i><span></span></a></li>
+          <li><a href="#" class="icon dribbble"><i class="fa fa-dribbble" aria-hidden="true"></i><span></span></a></li>
+        </ul>
+      </div>
+
+      <div class="nav-top">
+        <nav class="navbar navbar-default">
+          <div class="navbar-header nav_2">
+            <button type="button" class="navbar-toggle collapsed navbar-toggle1" data-toggle="collapse" data-target="#bs-megadropdown-tabs">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+
+          <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
+            <ul class="nav navbar-nav">
+              <li><a href="index.html" class="hyper"><span>Home</span></a></li>
+
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle hyper" data-toggle="dropdown"><span>Medicine<b class="caret"></b></span></a>
+                <ul class="dropdown-menu multi">
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <ul class="multi-column-dropdown">
+                        <li><a href="kitchen.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Water & Beverages</a></li>
+                        <li><a href="kitchen.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Fruits & Vegetables</a></li>
+                        <li><a href="kitchen.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Staples</a></li>
+                        <li><a href="kitchen.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Branded Food</a></li>
+                      </ul>
+                    </div>
+                    <div class="col-sm-3">
+                      <ul class="multi-column-dropdown">
+                        <li><a href="kitchen.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Breakfast &amp; Cereal</a></li>
+                        <li><a href="kitchen.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Snacks</a></li>
+                        <li><a href="kitchen.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Spices</a></li>
+                        <li><a href="kitchen.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Biscuit &amp; Cookie</a></li>
+                        <li><a href="kitchen.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Sweets</a></li>
+                      </ul>
+                    </div>
+                    <div class="col-sm-3">
+                      <ul class="multi-column-dropdown">
+                        <li><a href="kitchen.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Pickle & Condiment</a></li>
+                        <li><a href="kitchen.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Instant Food</a></li>
+                        <li><a href="kitchen.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Dry Fruit</a></li>
+                        <li><a href="kitchen.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Tea &amp; Coffee</a></li>
+                      </ul>
+                    </div>
+                    <div class="col-sm-3 w3l">
+                      <a href="kitchen.html"><img src="images/me.png" class="img-responsive" alt=""></a>
+                    </div>
+                    <div class="clearfix"></div>
+                  </div>
+                </ul>
+              </li>
+
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle hyper" data-toggle="dropdown"><span>Personal Care<b class="caret"></b></span></a>
+                <ul class="dropdown-menu multi multi1">
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <ul class="multi-column-dropdown">
+                        <li><a href="care.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Ayurvedic</a></li>
+                        <li><a href="care.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Baby Care</a></li>
+                        <li><a href="care.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Cosmetics</a></li>
+                        <li><a href="care.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Deo & Perfumes</a></li>
+                      </ul>
+                    </div>
+                    <div class="col-sm-3">
+                      <ul class="multi-column-dropdown">
+                        <li><a href="care.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Hair Care</a></li>
+                        <li><a href="care.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Oral Care</a></li>
+                        <li><a href="care.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Personal Hygiene</a></li>
+                        <li><a href="care.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Skin Care</a></li>
+                      </ul>
+                    </div>
+                    <div class="col-sm-3">
+                      <ul class="multi-column-dropdown">
+                        <li><a href="care.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Fashion Accessories</a></li>
+                        <li><a href="care.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Grooming Tools</a></li>
+                        <li><a href="care.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Shaving Needs</a></li>
+                        <li><a href="care.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Sanitary Needs</a></li>
+                      </ul>
+                    </div>
+                    <div class="col-sm-3 w3l">
+                      <a href="care.html"><img src="images/me1.png" class="img-responsive" alt=""></a>
+                    </div>
+                    <div class="clearfix"></div>
+                  </div>
+                </ul>
+              </li>
+
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle hyper" data-toggle="dropdown"><span>Disease<b class="caret"></b></span></a>
+                <ul class="dropdown-menu multi multi2">
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <ul class="multi-column-dropdown">
+                        <li><a href="hold.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Chronic Illness</a></li>
+                        <li><a href="hold.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Joint Pain & Fever</a></li>
+                        <li><a href="hold.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Safety Accessories</a></li>
+                        <li><a href="hold.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Allergy Care</a></li>
+                      </ul>
+                    </div>
+                    <div class="col-sm-3">
+                      <ul class="multi-column-dropdown">
+                        <li><a href="kitchen.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Water & Liquid Items</a></li>
+                        <li><a href="kitchen.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Organic & Dry Foods</a></li>
+                        <li><a href="kitchen.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Eno</a></li>
+                        <li><a href="kitchen.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Branded Medicine</a></li>
+                      </ul>
+                    </div>
+                    <div class="col-sm-3 w3l">
+                      <a href="hold.html"><img src="images/me2.png" class="img-responsive" alt=""></a>
+                    </div>
+                    <div class="clearfix"></div>
+                  </div>
+                </ul>
+              </li>
+
+              <li class="active"><a href="bmi.html" class="hyper"><span>BMI Calculator</span></a></li>
+              <li><a href="contact.html" class="hyper"><span>Contact Us</span></a></li>
+            </ul>
+          </div>
+        </nav>
+        <div class="cart">
+          <span class="fa fa-shopping-cart my-cart-icon">
+            <span class="badge badge-notify my-cart-badge"></span>
+          </span>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Breadcrumb -->
+  <div class="container breadcrumb-wrap">
+    <ol class="breadcrumb" style="margin-bottom:10px">
+      <li><a href="index.html">Home</a></li>
+      <li class="active">BMI Calculator</li>
+    </ol>
+  </div>
+
+  <!-- Page intro (fits your look) -->
+  <div class="container">
+    <div class="page-hero">
+      <h3 style="margin-top:0">BMI Calculator</h3>
+      <p class="text-muted">BMI = weight (kg) / height (m)<sup>2</sup></p>
+    </div>
+  </div>
+
+  <!-- Calculator card in Bootstrap panel style -->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+
+        <div class="panel panel-default panel-bmi">
+          <div class="panel-heading">
+            <h4 class="panel-title" style="margin:0"><i class="fa fa-calculator"></i> Calculate your BMI</h4>
+          </div>
+          <div class="panel-body">
+            <form id="bmi-form" class="form-horizontal" role="form" novalidate>
+              <div class="form-group">
+                <label for="height" class="col-sm-3 control-label">Height</label>
+                <div class="col-sm-9">
+                  <div class="row">
+                    <div class="col-xs-7">
+                      <input type="number" class="form-control" id="height" placeholder="e.g., 175" min="0" step="0.1" required>
+                      <div class="help-block help-block-small">Choose the height unit on the right.</div>
+                    </div>
+                    <div class="col-xs-5">
+                      <label class="radio-inline" style="margin-right:10px">
+                        <input type="radio" name="unit" value="cm" checked> cm
+                      </label>
+                      <label class="radio-inline">
+                        <input type="radio" name="unit" value="m"> m
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="weight" class="col-sm-3 control-label">Weight (kg)</label>
+                <div class="col-sm-9">
+                  <input type="number" class="form-control" id="weight" placeholder="e.g., 70" min="0" step="0.1" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="col-sm-offset-3 col-sm-9">
+                  <button type="submit" class="btn btn-danger">
+                    <i class="fa fa-refresh"></i> Calculate
+                  </button>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="col-sm-offset-3 col-sm-9">
+                  <div id="bmi-output" class="alert alert-info bmi-result" role="status" aria-live="polite">
+                    Enter your details and click Calculate.
+                  </div>
+                </div>
+              </div>
+            </form>
+
+            <!-- Quick reference table (bootstrap table) -->
+            <div class="table-responsive">
+              <table class="table table-striped">
+                <thead>
+                  <tr><th>BMI</th><th>Classification</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>&lt; 18.5</td><td>Underweight</td></tr>
+                  <tr><td>18.5 – 24.9</td><td>Healthy weight</td></tr>
+                  <tr><td>25.0 – 29.9</td><td>Overweight</td></tr>
+                  <tr><td>&ge; 30.0</td><td>Obese</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right column: clinic info / CTA to match theme -->
+      <div class="col-md-4">
+        <div class="panel panel-default">
+          <div class="panel-heading"><strong>Need advice?</strong></div>
+          <div class="panel-body">
+            <p class="text-muted">BMI is a screening tool only. For personalised advice, speak with our pharmacists or book a consult.</p>
+            <a href="contact.html" class="btn btn-primary btn-block"><i class="fa fa-phone"></i> Contact Us</a>
+            <a href="offer.html" class="btn btn-default btn-block"><i class="fa fa-tag"></i> Current Offers</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Footer (same as index) -->
+  <div class="footer">
+    <div class="container">
+      <div class="col-md-3 footer-grid">
+        <h3>Menu</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="kitchen.html">Medicine</a></li>
+          <li><a href="care.html">Personal Care</a></li>
+          <li><a href="hold.html">Disease</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3 footer-grid">
+        <h3>Customer Services</h3>
+        <ul>
+          <li><a href="shipping.html">Shipping</a></li>
+          <li><a href="faqs.html">Faqs</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="offer.html">Online Shopping</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3 footer-grid">
+        <h3>My Account</h3>
+        <ul>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="register.html">Register</a></li>
+          <li><a href="wishlist.html">Wishlist</a></li>
+        </ul>
+      </div>
+      <div class="clearfix"></div>
+
+      <div class="footer-bottom">
+        <p class="fo-para">&nbsp;</p>
+        <ul class="social-fo">
+          <li></li><li></li><li></li><li></li>
+        </ul>
+        <div class="address">
+          <div class="col-md-4 fo-grid1">
+            <p><i class="fa fa-home" aria-hidden="true"></i>21st Street , 45 Building Road selangor.</p>
+          </div>
+          <div class="col-md-4 fo-grid1">
+            <p><i class="fa fa-phone" aria-hidden="true"></i>+60182129241 , +60184247044</p>
+          </div>
+          <div class="col-md-4 fo-grid1">
+            <p><a href="mailto:info@example.com"><i class="fa fa-envelope-o" aria-hidden="true"></i>HassanandQasim@gmail.com</a></p>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+
+      <div class="copy-right">
+        <p>&copy; 2020 Fresh Mart. Designed by <a href="about developer.html">Ucare_Pharma</a></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Smooth scroll init (you already include these libs above) -->
+  <script>
+    $(function(){ $().UItoTop && $().UItoTop({ easingType: 'easeOutQuart' }); });
+  </script>
+
+  <!-- Bootstrap JS (match index) -->
+  <script src="js/bootstrap.js"></script>
+
+  <!-- BMI logic (uses jQuery 1.11 syntax) -->
+  <script>
+    (function($){
+      function classify(bmi){
+        if (bmi < 18.5) return {txt:'Underweight', cls:'label-warning'};
+        if (bmi < 25)   return {txt:'Healthy weight', cls:'label-success'};
+        if (bmi < 30)   return {txt:'Overweight', cls:'label-info'};
+        return {txt:'Obese', cls:'label-danger'};
+      }
+
+      $('#bmi-form').on('submit', function(e){
+        e.preventDefault();
+
+        var h = parseFloat($('#height').val());
+        var w = parseFloat($('#weight').val());
+        var unit = $('input[name="unit"]:checked').val() || 'cm';
+
+        if (!h || !w || h <= 0 || w <= 0){
+          $('#bmi-output').removeClass('alert-info alert-success alert-danger')
+                          .addClass('alert-danger')
+                          .html('Please enter a valid height and weight greater than 0.');
+          return;
+        }
+
+        var meters = unit === 'cm' ? h/100 : h;
+        var bmi = w / (meters*meters);
+        var cat = classify(bmi);
+
+        var minW = 18.5 * meters * meters;
+        var maxW = 24.9 * meters * meters;
+
+        $('#bmi-output')
+          .removeClass('alert-info alert-danger alert-success')
+          .addClass('alert-success')
+          .html(
+            '<strong>Your BMI:</strong> ' + bmi.toFixed(1) +
+            ' <span class="label ' + cat.cls + '">' + cat.txt + '</span><br>' +
+            '<span class="text-muted">Healthy weight range for your height: ' +
+            minW.toFixed(1) + '–' + maxW.toFixed(1) + ' kg.</span>'
+          );
+      });
+    })(jQuery);
+  </script>
+</body>
+</html>
